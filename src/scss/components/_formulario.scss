@@ -1,0 +1,327 @@
+@use '../variables/variables' as v;
+
+.container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: v.$radius;
+    width: 25rem;
+    &__header {
+      margin-bottom: 2rem;
+    }
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  
+    &__group {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      
+    }
+  
+    &__label {
+      position: absolute;
+      top: -0.5rem;
+      left: 0.5rem;
+      background-color: white;
+      padding: 0 0.5rem;
+      font-size: 0.8rem;
+    }
+  
+    &__input {
+      padding: 1rem;
+      font-family: inherit;
+      color: inherit;
+      outline: none;
+      border: 1px solid v.$clr-gray300;
+      border-radius: v.$radius;
+    }
+   
+    &__successicon,
+    &__erroricon {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      width: 1rem;
+      display: none;
+    }
+  
+    &__successicon {
+      fill: v.$clr-success;
+    }
+  
+    &__erroricon {
+      fill: v.$clr-error;
+    }
+  
+    &__message {
+      font-size: 0.8rem;
+      margin-top: 0.2rem;
+      color: v.$clr-error;
+      display: none;
+    }
+  
+    //   success state
+    &__success input {
+      border: 1px solid v.$clr-success;
+    }
+  
+    &__success svg.form__successicon {
+      display: block;
+    }
+  
+    //error state
+    &__error input {
+      border: 1px solid v.$clr-error;
+    }
+  
+    &__error svg.form__erroricon {
+      display: block;
+    }
+  
+    &__error p.form__message {
+      display: block;
+    }
+  
+    &__button {
+      outline: none;
+      border: none;
+      padding: 1rem;
+      border-radius: v.$radius;
+      font-family: inherit;
+      cursor: pointer;
+      background-color: v.$clr-primary;
+      color: white;
+    }
+    &__Links{
+      text-decoration: none;
+      outline: none;
+      color: v.$clr-gray500;
+    }
+    
+  }
+  
+  .focus__input {
+      padding: 1rem;
+      font-family: inherit;
+      color: inherit;
+      outline: none;
+      border-color: #275EFE;
+      border-radius: v.$radius;
+    }
+  
+  .img {
+    max-width: 100%;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    padding: 0%;
+    margin: 0%;
+  }
+  
+  /*upload*/
+  .form__conteiner{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+  &__input{
+    display: none;
+  }
+  
+  &__upload {
+    width: 200px;
+    height: 200px;
+    padding: 8px;
+    border: 2px dotted #7e57c2;
+    border-radius: 50%;
+    color: #7e57c2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    margin: 20px;
+    text-align:center;
+    position: relative;
+  }
+  
+  &__upload:hover {
+    background-color: #ede7f6;
+  }
+    
+  &__img {
+    max-width: 100%;
+    width: 200px;
+    height: 180px;
+    border-radius: 50%;
+    padding: 0%;
+    margin: 0%;
+  }
+  
+  &__span {
+    max-width: 100%;
+  
+    font-family: sans-serif;
+    font-size: 20px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+    &__message {
+    font-size: 12px;
+    margin: 10px auto;
+    color: #ff1744;
+  }
+  }
+  /*DropDown*/
+.combo {
+  display: block;
+  margin-bottom: 1.5em;
+  max-width: 400px;
+  position: relative;
+}
+
+.combo::after {
+  border-bottom: 2px solid rgba(0,0,0,.5);
+  border-right: 2px solid rgba(0,0,0,.5);
+  content: '';
+  display: block;
+  height: 8px;
+  pointer-events: none;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translate(0, -65%) rotate(45deg);
+  width: 8px;
+}
+
+.combo-input {
+  padding: 1rem;
+    font-family: inherit;
+    color: inherit;
+    outline: none;
+    border: 1px solid v.$clr-gray300;
+    border-radius: v.$radius;
+    width:100%;
+  display: block;
+  min-height: calc(1.4em + 26px);
+  text-align: left;
+  width: 100%;
+}
+
+.open .combo-input {
+  border-radius: 4px 4px 0 0;
+}
+
+.combo-input:focus {
+  border-color: #0067b8;
+  box-shadow: 0 0 4px 2px #0067b8;
+  outline: 5px solid transparent;
+}
+
+.combo-label {
+  display: block;
+  font-size: 20px;
+  font-weight: 100;
+  margin-bottom: 0.25em;
+}
+
+.combo-menu {
+  background-color: #f5f5f5;
+  border: 1px solid rgba(0,0,0,.42);
+  border-radius: 0 0 4px 4px;
+  display: none;
+  max-height: 300px;
+  overflow-y:scroll;
+  left: 0;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 100;
+}
+
+.open .combo-menu {
+  display: block;
+}
+
+.combo-option {
+  padding: 10px 12px 12px;
+}
+
+.combo-option.option-current,
+.combo-option:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.combo-option.option-selected {
+  padding-right: 30px;
+  position: relative;
+}
+
+.combo-option.option-selected::after {
+  border-bottom: 2px solid #000;
+  border-right: 2px solid #000;
+  content: '';
+  height: 16px;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translate(0, -50%) rotate(45deg);
+  width: 8px;
+}
+
+/* multiselect list of selected options */
+.selected-options {
+  list-style-type: none;
+  margin: 0;
+  max-width: 400px;
+  padding: 0;
+}
+
+.selected-options li {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.remove-option {
+  background-color: #6200ee;
+  border: 1px solid #6200ee;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 0.75em;
+  font-weight: bold;
+  margin-bottom: 6px;
+  margin-right: 6px;
+  padding: 0.25em 1.75em 0.25em 0.25em;
+  position: relative;
+}
+
+.remove-option:focus {
+  border-color: #baa1dd;
+  box-shadow: 0 0 3px 1px #6200ee;
+  outline: 3px solid transparent;
+}
+
+.remove-option::before,
+.remove-option::after {
+  border-right: 2px solid #fff;
+  content: "";
+  height: 1em;
+  right: 0.75em;
+  position: absolute;
+  top: 50%;
+  width: 0;
+}
+
+.remove-option::before {
+  transform: translate(0, -50%) rotate(45deg);
+}
+
+.remove-option::after {
+  transform: translate(0, -50%) rotate(-45deg);
+}

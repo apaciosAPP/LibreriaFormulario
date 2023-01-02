@@ -1,0 +1,39 @@
+/* if (
+        validateFileEmpty(formValues, avatarUpload) &&
+        isEmail(email.current.value.trim()) &&
+        isPassSubmit(password)
+      ) {
+        const spiner = document.createElement("i");
+        spiner.classList.add("fa", "fa-spinner", "fa-spin");
+        button.current.appendChild(spiner);
+        const formData = new FormData();
+        formData.append("archivo", formValues.avatarUpload);
+        formData.append("correo", formValues.correo);
+        formData.append("password", formValues.password);
+        loginApi(formData);
+        // remove button
+        while (selectedOptions.current.children.length > 0) {
+          selectedOptions.current.firstChild.remove();
+        }
+        cleanProduct();
+
+        setFormValues({
+          correo: "",
+          password: "",
+          avatarUpload: [],
+          categoria: "",
+          date: "",
+          hora: "",
+          tel: "",
+          comensales: "",
+          username: "",
+          productos: []
+        });
+        email.current.value = "";
+        password.current.value = "";
+        /*date.current.value = "";
+        hora.current.value = "";
+        tel.current.value = "";
+        categoria.current.value = "Elige Una Categoria";
+        span.current.firstChild.remove();
+    }*/
